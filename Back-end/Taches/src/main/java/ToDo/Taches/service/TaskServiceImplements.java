@@ -6,12 +6,18 @@ import ToDo.Taches.repository.TacheRepository;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class TaskServiceImplements implements TaskService {
     
+    @Autowired
     private TacheRepository tacheRepository;
+
+    public TaskServiceImplements(TacheRepository tacheRepository) {
+        this.tacheRepository = tacheRepository;
+    }
 
     @Override
     public Tache create(Tache tache) {
@@ -24,12 +30,12 @@ public class TaskServiceImplements implements TaskService {
     }
 
     @Override
-    public Optional<Tache> singleTache(int id) {
+    public Optional<Tache> singleTache(long id) {
         return tacheRepository.findById(id);
     }
 
     @Override
-    public Optional<Tache> update(int id, Tache tache) {
+    public Optional<Tache> update(long id, Tache tache) {
         return tacheRepository.findById(id)
         .map(p-> {
             p.setTitle(p.getTitle());
@@ -39,7 +45,7 @@ public class TaskServiceImplements implements TaskService {
     }
     
     @Override
-    public String delete(int id) {
+    public String delete(long id) {
         tacheRepository.deleteById(id);
         return "tache supprime";
     }

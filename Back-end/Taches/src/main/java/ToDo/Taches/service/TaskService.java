@@ -11,9 +11,9 @@ public interface TaskService {
 
     List<Tache> Read();
 
-    Optional<Tache> singleTache(int id);
+    Optional<Tache> singleTache(long id);
 
-    Optional<Tache> update(int id, Tache tache);
+    Optional<Tache> update(long id, Tache tache);
 
-    String delete(int id);
+    String delete(long id);
 }

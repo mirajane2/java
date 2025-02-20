@@ -15,7 +15,7 @@ public class Tache {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @Column(length = 255, nullable = false)
     private String title;
@@ -23,7 +23,7 @@ public class Tache {
     @Column(columnDefinition = "TEXT" ,nullable= true)
     private String description;
 
-    @Column(name = "due_date")
+    @Column(name = "due_date", nullable = true)
     private LocalDateTime dueDate; 
 
     @Column(nullable = false, columnDefinition = "BOOLEAN DEFAULT false")
@@ -47,8 +47,8 @@ public class Tache {
         this.dueDate = dueDate;
     }
 
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+    public long getId() { return id; }
+    public void setId(long id) { this.id = id; }
 
     public String getTitle() { return title; }
     public void setTitle(String title) { this.title = title; }
