@@ -1,0 +1,29 @@
+<div class="form-container">
+    <h1>Formulaire de Création</h1>
+    <form (ngSubmit)="OnSubmit()">
+        <div>
+            <label for="title">Nom de la tâche</label>
+            <input type="text" id="title" name="title" [(ngModel)]="Task.title" required>
+        </div>
+
+        <div>
+            <label for="description">Description</label>
+            <textarea id="description" name="description" [(ngModel)]="Task.description"></textarea>
+        </div>
+
+        <div>
+            <label for="dueDate">Date d'échéance</label>
+            <input type="date" id="dueDate" name="dueDate" [(ngModel)]="Task.dueDate" required>
+        </div>
+
+        <div>
+            <label for="status">Statut</label>
+            <select id="status" name="status" [(ngModel)]="Task.status" required>
+                <option value="false">En cours</option>
+                <option value="true">Terminé</option>
+            </select>
+        </div>
+
+        <button type="submit">Valider</button>
+    </form>
+</div>

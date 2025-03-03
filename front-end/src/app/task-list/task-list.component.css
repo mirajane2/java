@@ -1,0 +1,42 @@
+.list-task{
+    box-sizing: border-box;
+    width: 50%;
+    margin: 20px auto;
+    padding: 10px 30px;
+    width: 35%;
+    box-shadow: lightgray 4px 4px 20px;
+    background-color: aqua;
+    border-radius: 20px;
+}
+
+h1{
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.list-task button {
+    flex-direction: row;
+    width: auto;
+    padding: 5px 15px;
+    margin-top: 20px;
+    margin-left: 20px;
+    text-transform: uppercase;
+
+}
+
+span{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.new{
+    border-radius: 20px;
+    margin-top: 15px;
+    padding: 20px;
+    text-align: center;
+    background-color: blueviolet;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
