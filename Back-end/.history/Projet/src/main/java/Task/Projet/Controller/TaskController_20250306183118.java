@@ -41,7 +41,7 @@ public class TaskController {
     }
 
     @GetMapping("/api/tasks/{id}")
-    public Optional<Task> singleTache(@PathVariable int id) {
+    public Optional<Task> singleTache(integer id) {
         return taskService.singleTache(id);
     }
 

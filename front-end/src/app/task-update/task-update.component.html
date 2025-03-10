@@ -1,5 +1,5 @@
 <div class="form-container">
-    <h1>Formulaire de Création</h1>
+    <h1>Formulaire de Edition</h1>
     <form (ngSubmit)="OnSubmit()">
         <div>
             <label for="title">Nom de la tâche</label>
@@ -14,6 +14,7 @@
         <div>
             <label for="dueDate">Date d'échéance</label>
             <input type="date" id="dueDate" name="dueDate" [(ngModel)]="Task.dueDate" required>
+            <p> Date formaté : {{ Task.dueDate | date:'dd/MM/yy'}}</p>
         </div>
 
         <div>

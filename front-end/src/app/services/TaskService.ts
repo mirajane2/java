@@ -21,7 +21,7 @@ export class TaskService {
         return this.http.post(`http://localhost:8080/api/tasks`, task);
     }
 
-    updateTask(id : number, task :String) {
+    updateTask(id : number, task : any) {
         return this.http.put(`http://localhost:8080/api/tasks/${id}`, task);
     }
 

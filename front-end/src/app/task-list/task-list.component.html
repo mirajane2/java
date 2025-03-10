@@ -1,8 +1,8 @@
 <h1>Liste des Taches</h1>
 <div class="list-task" *ngFor="let task of tasks">
   <span> {{ task.title }}</span>
-  <button (click)="DetailTask(task.title)"> View</button>
-  <button (clisk)="UpdateTask(task.id)"> Update</button>
+  <button (click)="DetailTask()"> View</button>
+  <button (click)="UpdateTask(task.id)"> Update</button>
   <button (click)="DeleteTask(task.id)"> Delete</button>
 </div>
 <button  class="new" (click)="CreateTask()">Create</button>

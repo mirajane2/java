@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class TaskListComponent implements OnInit {
   tasks : any[] = [];
 
-  constructor(private taskService : TaskService, private route : Router ){}
+  constructor(private taskService : TaskService, private route : Router){}
 
   ngOnInit(): void {
     this.taskService.getTasks().subscribe((data : any) => {
@@ -24,21 +24,23 @@ export class TaskListComponent implements OnInit {
     this.route.navigate(["/api/task/form"])
   }
 
-  DetailTask(id : number){
-    this.route.navigate(["/api/task/", id])
+  UpdateTask(id: number) {
+    this.route.navigate(["/api/task", id])
   }
 
-  UpdateTask(id :number) {
-    this.route.navigate(["/api/task/", id])
+  DetailTask(){
+    this.route.navigate(["/api/task/detail"])
   }
+
+  
 
   DeleteTask(id : number) {
     if(window.confirm("Voulez vous supprimer cette tache")) {
       this.taskService.deleteTask(id).subscribe(() => {
         this.tasks = this.tasks.filter(task => task.id !== id)
+        alert("tache supprimé")
       })
     }
-    alert("Cette tache a été supprimé");
-    
+   
   }
 }
